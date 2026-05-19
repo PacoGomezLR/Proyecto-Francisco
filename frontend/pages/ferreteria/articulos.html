@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA LIN - Catálogo de Artículos</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/buttons.css">
+    <link rel="stylesheet" href="../../css/forms.css">
+    <link rel="stylesheet" href="../../css/tables.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/ferreteria/articulos.css">
+</head>
+
+<body class="sga-layout">
+
+    <div class="sga-main">
+
+        <header class="sga-header">
+            <div class="sga-header-left">
+                <button class="sga-hamburger" aria-label="Abrir menú">☰</button>
+                <nav class="sga-breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <a href="index.html">Catálogo</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <span class="sga-breadcrumb-current">Artículos</span>
+                </nav>
+            </div>
+            <div class="sga-header-right"></div>
+        </header>
+
+        <div class="sga-content">
+            <div class="sga-inner">
+                <div class="sga-page-header">
+                    <div>
+                        <h1 class="sga-page-title">Catálogo de Artículos</h1>
+                        <p class="sga-page-description">Consulta y gestión del catálogo general · SGA LIN</p>
+                    </div>
+                </div>
+
+                <div class="filter-panel">
+                    <input type="text" id="buscador-articulos" class="search-bar"
+                        placeholder="Buscar por código, nombre, medida o material...">
+                </div>
+
+                <div class="table-wrapper">
+                    <table id="tabla-articulos">
+                        <thead>
+                            <tr>
+                                <th>Artículo</th>
+                                <th>Nombre de Artículo</th>
+                                <th>Stock Mín.</th>
+                                <th>Stock Máx.</th>
+                                <th>Costo</th>
+                                <th>% Dto.</th>
+                                <th>Color</th>
+                                <th>Medida</th>
+                                <th>Material</th>
+                                <th>Código</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-articulos">
+                            <tr>
+                                <td colspan="10" class="loading">Cargando catálogo...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Panel detalle artículo -->
+    <div id="panel-backdrop" class="det-backdrop"></div>
+    <aside id="panel-detalle" class="det-panel">
+        <div class="det-header">
+            <span id="det-cod" class="det-title-cod"></span>
+            <button id="btn-cerrar-panel" class="det-close" title="Cerrar">✕</button>
+        </div>
+        <div class="det-nom" id="det-nom"></div>
+        <div class="det-grid">
+            <div class="det-item"><span class="det-label">Stock mínimo</span><span id="det-smin" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Stock máximo</span><span id="det-smax" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Costo</span><span id="det-cos" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">% Descuento</span><span id="det-dto" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Color</span><span id="det-col" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Medida</span><span id="det-med" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Material</span><span id="det-mat" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Código alt.</span><span id="det-cod2" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Código barras</span><span id="det-bar" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Grupo</span><span id="det-gru" class="det-value"></span></div>
+        </div>
+    </aside>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/ui/sidebar.js"></script>
+    <script src="../../js/ui/layout.js"></script>
+    <script src="../../js/ferreteria/articulos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+/* layout delegado a sga-inner / sga-page-header en layout.css */
+
+.filter-panel {
+    background: var(--sga-surface);
+    border-radius: var(--sga-radius);
+    box-shadow: var(--sga-shadow);
+    padding: 14px 18px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--sga-border);
+    border-radius: 6px;
+    font-size: .875rem;
+    background: #fff;
+    color: var(--sga-text);
+}
+.search-bar:focus { outline: none; border-color: var(--sga-primary); }
+
+.table-wrapper {
+    background: var(--sga-surface);
+    border-radius: var(--sga-radius);
+    box-shadow: var(--sga-shadow);
+    overflow-x: auto;
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+th {
+    background: #f0f5ff;
+    padding: 11px 14px;
+    text-align: left;
+    color: var(--sga-primary);
+    border-bottom: 2px solid #dbeafe;
+    font-size: .82rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: .88rem;
+}
+
+tr:hover td { background: #f8faff; }

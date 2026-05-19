@@ -1,0 +1,7 @@
+[
+  { "CLICOD": "PRO001", "CLIRAZ": "SUMINISTROS INDUSTRIALES NORTE S.A.", "CLINOM": "SIN S.A.",      "CLIDIR": "Pol. Industrial Norte 15", "CLIPOSCIU": "Bilbao",     "CLINIF": "A48001234", "CLITEL": "944000001", "CLIPERCON": "Juan Ibáñez",   "CLIEMA": "ventas@sin-sa.es" },
+  { "CLICOD": "PRO002", "CLIRAZ": "FERRETERÍA MAYORISTA CENTRO S.L.",    "CLINOM": "FERMACE S.L.",  "CLIDIR": "Calle Industrial 23",      "CLIPOSCIU": "Madrid",     "CLINIF": "B28001234", "CLITEL": "912000001", "CLIPERCON": "María García",   "CLIEMA": "pedidos@fermace.com" },
+  { "CLICOD": "PRO003", "CLIRAZ": "TORNILLERÍA DEL MEDITERRÁNEO S.L.",   "CLINOM": "TORMED S.L.",   "CLIDIR": "Av. del Puerto 88",        "CLIPOSCIU": "Valencia",   "CLINIF": "B46001234", "CLITEL": "963000001", "CLIPERCON": "Carlos Pérez",   "CLIEMA": "info@tormed.es" },
+  { "CLICOD": "PRO004", "CLIRAZ": "HERRAMIENTAS Y ÚTILES S.A.",          "CLINOM": "HERUTIL S.A.",  "CLIDIR": "Polígono Sur, Nave 7",     "CLIPOSCIU": "Sevilla",    "CLINIF": "A41001234", "CLITEL": "954000001", "CLIPERCON": "",               "CLIEMA": "comercial@herutil.es" },
+  { "CLICOD": "PRO005", "CLIRAZ": "ADHESIVOS Y PINTURAS IBÉRICA S.A.",   "CLINOM": "ADPIBER S.A.",  "CLIDIR": "Ctra. Nacional 340 Km 12", "CLIPOSCIU": "Barcelona",  "CLINIF": "A08001234", "CLITEL": "932000001", "CLIPERCON": "Ana Soler",      "CLIEMA": "ventas@adpiber.com" }
+]

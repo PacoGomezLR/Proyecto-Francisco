@@ -1,0 +1,41 @@
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const healthRoutes = require('./routes/health.routes');
+const systemRoutes = require('./routes/system.routes');
+const tercerosRoutes = require('./routes/terceros.routes');
+const configRoutes = require('./routes/config.routes');
+const articulosRoutes = require('./routes/articulos.routes');
+const ubicacionesRoutes = require('./routes/ubicaciones.routes');
+const lotesRoutes = require('./routes/lotes.routes');
+const visorRoutes = require('./routes/visor.routes');
+const analyticsRoutes = require('./routes/analytics.routes');
+const stockRoutes = require('./routes/stock.routes');
+const adminRoutes = require('./routes/admin.routes');
+const escriturasRoutes = require('./routes/escrituras.routes');
+const movimientosRoutes = require('./routes/movimientos.routes');
+
+const app = express();
+app.use(helmet());
+app.use(cors());
+app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 200, standardHeaders: true, legacyHeaders: false }));
+app.use(express.json());
+
+app.get('/', (_req, res) => res.json({ ok: true, servicio: 'SGA LIN API', version: '1.0.0', docs: '/health' }));
+
+app.use('/', healthRoutes);
+app.use('/', systemRoutes);
+app.use('/', tercerosRoutes);
+app.use('/', configRoutes);
+app.use('/', articulosRoutes);
+app.use('/', ubicacionesRoutes);
+app.use('/', lotesRoutes);
+app.use('/', visorRoutes);
+app.use('/', analyticsRoutes);
+app.use('/', stockRoutes);
+app.use('/', adminRoutes);
+app.use('/', escriturasRoutes);
+app.use('/', movimientosRoutes);
+
+module.exports = app;

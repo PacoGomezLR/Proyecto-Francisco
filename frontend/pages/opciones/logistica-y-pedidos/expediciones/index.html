@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA LIN — Expediciones</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+    <link rel="stylesheet" href="../../../../css/layout.css">
+    <link rel="stylesheet" href="../../../../css/sidebar.css">
+    <link rel="stylesheet" href="../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../css/buttons.css">
+    <link rel="stylesheet" href="../../../../css/forms.css">
+    <link rel="stylesheet" href="../../../../css/tables.css">
+    <link rel="stylesheet" href="../../../../css/badges.css">
+    <link rel="stylesheet" href="../../../../css/responsive.css">
+    <link rel="stylesheet" href="../../../../css/opciones/logistica-y-pedidos/expediciones/index.css">
+</head>
+
+<body class="sga-layout">
+
+    <!-- sidebar.js inyecta <aside class="sga-sidebar"> aquí -->
+
+    <div class="sga-main">
+
+        <header class="sga-header">
+            <div class="sga-header-left">
+                <button class="sga-hamburger" aria-label="Abrir menú">☰</button>
+                <nav class="sga-breadcrumb">
+                    <a href="../../../../index.html">Inicio</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <span class="sga-breadcrumb-current">Expediciones desde Pedido</span>
+                </nav>
+            </div>
+            <div class="sga-header-right"></div>
+        </header>
+
+        <div class="sga-content">
+            <div class="sga-inner">
+
+                <!-- CABECERA -->
+                <div class="sga-page-header">
+                    <div>
+                        <h1 class="sga-page-title">Expediciones desde Pedido</h1>
+                        <p class="sga-page-description">Tablero operativo de expediciones · SGA LIN</p>
+                    </div>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="ep-filters">
+                    <div class="ep-filters-row">
+                        <span class="ep-date-label">Desde</span>
+                        <input type="date" id="ep-f-desde" class="ep-date-input" aria-label="Fecha desde">
+                        <span class="ep-date-label">Hasta</span>
+                        <input type="date" id="ep-f-hasta" class="ep-date-input" aria-label="Fecha hasta">
+                        <input type="text" id="ep-f-buscar" class="ep-search-input"
+                               placeholder="Albarán, cliente…" autocomplete="off" aria-label="Buscar expedición">
+                        <select id="ep-f-status" class="ep-status-select" aria-label="Estado">
+                            <option value="todos">Todos los estados</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="parcial">Parcial</option>
+                            <option value="preparado">Con picking</option>
+                        </select>
+                        <div class="ep-quick-btns">
+                            <button class="ep-quick-btn" data-days="0" aria-label="Hoy">Hoy</button>
+                            <button class="ep-quick-btn" data-days="7" aria-label="Últimos 7 días">7d</button>
+                            <button class="ep-quick-btn ep-quick-btn--active" data-days="30" aria-label="Últimos 30 días">30d</button>
+                            <button class="ep-quick-btn" data-days="90" aria-label="Últimos 90 días">90d</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTADORES -->
+                <div class="ep-counters">
+                    <div class="ep-counter ep-counter--total">
+                        <span class="ep-counter__val" id="ep-cnt-total">—</span>
+                        <span class="ep-counter__label">Total</span>
+                    </div>
+                    <div class="ep-counter ep-counter--pend">
+                        <span class="ep-counter__val" id="ep-cnt-pend">—</span>
+                        <span class="ep-counter__label">Pendientes</span>
+                    </div>
+                    <div class="ep-counter ep-counter--parcial">
+                        <span class="ep-counter__val" id="ep-cnt-parcial">—</span>
+                        <span class="ep-counter__label">Parciales</span>
+                    </div>
+                    <div class="ep-counter ep-counter--prep">
+                        <span class="ep-counter__val" id="ep-cnt-prep">—</span>
+                        <span class="ep-counter__label">Con picking</span>
+                    </div>
+                </div>
+
+                <!-- KPI STRIP: métricas de albaranes -->
+                <div class="ep-kpi-strip" id="ep-kpi-strip" hidden></div>
+
+                <!-- AVISO LÍMITE 500 -->
+                <div class="ep-limit-notice" id="ep-limit-notice" hidden>
+                    <span>⚠</span>
+                    <span>Mostrando las primeras 500 líneas. Amplía los filtros de fecha o usa el buscador para acotar resultados.</span>
+                </div>
+
+                <!-- WORKSPACE -->
+                <div class="ep-workspace">
+
+                    <!-- LISTA -->
+                    <div class="ep-list-col">
+                        <div class="ep-list" id="ep-list">
+                            <div class="ep-placeholder" id="ep-placeholder">
+                                <span class="ep-placeholder-icon">🚛</span>
+                                Cargando expediciones…
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL DETALLE -->
+                    <aside class="ep-panel" id="ep-panel" aria-label="Detalle de expedición">
+
+                        <div class="ep-panel-header">
+                            <span class="ep-panel-title" id="ep-panel-title">Detalle</span>
+                            <button class="ep-panel-close" id="ep-panel-close" aria-label="Cerrar panel">×</button>
+                        </div>
+
+                        <div class="ep-panel-empty" id="ep-panel-empty">
+                            <span class="ep-panel-empty-icon">📋</span>
+                            Selecciona un albarán para ver el detalle de sus líneas.
+                        </div>
+
+                        <div class="ep-panel-meta" id="ep-panel-meta" hidden></div>
+
+                        <div class="ep-panel-body" id="ep-panel-body" hidden></div>
+
+                    </aside>
+
+                </div><!-- /.ep-workspace -->
+
+            </div><!-- /.sga-inner -->
+        </div><!-- /.sga-content -->
+
+    </div><!-- /.sga-main -->
+
+    <!-- Backdrop overlay tablet/móvil -->
+    <div class="ep-panel-backdrop" id="ep-panel-backdrop"></div>
+
+    <script src="../../../../js/api.js"></script>
+    <script src="../../../../js/ui/sidebar.js"></script>
+    <script src="../../../../js/ui/layout.js"></script>
+    <script src="../../../../js/opciones/logistica-y-pedidos/expediciones.js"></script>
+
+</body>
+
+</html>

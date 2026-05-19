@@ -1,0 +1,13 @@
+[
+  { "SFACOD": "FAJ", "SFANOM": "Fijación y tornillería", "SFANOLOT": 0 },
+  { "SFACOD": "ANC", "SFANOM": "Anclajes y tacos",       "SFANOLOT": 0 },
+  { "SFACOD": "HER", "SFANOM": "Herramientas manuales",  "SFANOLOT": 1 },
+  { "SFACOD": "CAB", "SFANOM": "Cables y cadenas",       "SFANOLOT": 0 },
+  { "SFACOD": "ADH", "SFANOM": "Adhesivos y sellantes",  "SFANOLOT": 1 },
+  { "SFACOD": "FER", "SFANOM": "Ferretería general",     "SFANOLOT": 0 },
+  { "SFACOD": "ELE", "SFANOM": "Electricidad",           "SFANOLOT": 0 },
+  { "SFACOD": "ALU", "SFANOM": "Aluminio y perfiles",    "SFANOLOT": 0 },
+  { "SFACOD": "MEC", "SFANOM": "Mecánica y muelles",     "SFANOLOT": 0 },
+  { "SFACOD": "TUB", "SFANOM": "Tubería y accesorios",   "SFANOLOT": 0 },
+  { "SFACOD": "PIN", "SFANOM": "Pinturas y barnices",    "SFANOLOT": 1 }
+]

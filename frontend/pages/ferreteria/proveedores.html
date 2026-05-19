@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA LIN - Gestión de Proveedores</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/buttons.css">
+    <link rel="stylesheet" href="../../css/forms.css">
+    <link rel="stylesheet" href="../../css/tables.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/ferreteria/proveedores.css">
+</head>
+
+<body class="sga-layout">
+
+    <div class="sga-main">
+
+        <header class="sga-header">
+            <div class="sga-header-left">
+                <button class="sga-hamburger" aria-label="Abrir menú">☰</button>
+                <nav class="sga-breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <a href="index.html">Catálogo</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <span class="sga-breadcrumb-current">Proveedores</span>
+                </nav>
+            </div>
+            <div class="sga-header-right"></div>
+        </header>
+
+        <div class="sga-content">
+            <div class="sga-inner">
+                <div class="sga-page-header">
+                    <div>
+                        <h1 class="sga-page-title">Proveedores</h1>
+                        <p class="sga-page-description">Empresas suministradoras y contactos comerciales · SGA LIN</p>
+                    </div>
+                    <button class="sga-btn sga-btn-primary sga-btn-sm" id="btn-nuevo">+ Nuevo Proveedor</button>
+                </div>
+
+                <div class="filter-panel">
+                    <input type="text" id="buscador" placeholder="Buscar por código, nombre, dirección o contacto..." class="search-bar">
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cód. Proveedor</th>
+                                <th>Razón Social</th>
+                                <th>Dirección</th>
+                                <th>Contacto</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-proveedores">
+                            <tr><td colspan="6" class="loading">Cargando proveedores...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal nuevo proveedor -->
+    <div id="modal-backdrop" class="modal-backdrop"></div>
+    <div id="modal-nuevo" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <div class="modal-header">
+            <h2 class="modal-titulo" id="modal-titulo">Nuevo Proveedor</h2>
+            <button id="btn-modal-cerrar" class="det-close" title="Cerrar">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-grid">
+                <div class="mf-group">
+                    <label class="mf-label">Código *</label>
+                    <input class="mf-input" id="nw-cod" placeholder="PRO006" maxlength="10">
+                </div>
+                <div class="mf-group mf-full">
+                    <label class="mf-label">Razón Social *</label>
+                    <input class="mf-input" id="nw-raz" placeholder="EMPRESA S.L.">
+                </div>
+                <div class="mf-group mf-full">
+                    <label class="mf-label">Dirección</label>
+                    <input class="mf-input" id="nw-dir" placeholder="Calle ejemplo 1, Ciudad">
+                </div>
+                <div class="mf-group">
+                    <label class="mf-label">Contacto</label>
+                    <input class="mf-input" id="nw-con" placeholder="Nombre Apellido">
+                </div>
+                <div class="mf-group">
+                    <label class="mf-label">Teléfono</label>
+                    <input class="mf-input" id="nw-tel" placeholder="900000000" type="tel">
+                </div>
+                <div class="mf-group mf-full">
+                    <label class="mf-label">Email</label>
+                    <input class="mf-input" id="nw-ema" placeholder="contacto@empresa.com" type="email">
+                </div>
+            </div>
+            <p id="modal-error" class="modal-error" hidden></p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-tool secondary" id="btn-modal-cancelar">Cancelar</button>
+            <button class="btn-tool primary"   id="btn-modal-guardar">Guardar proveedor</button>
+        </div>
+    </div>
+
+    <!-- Panel detalle proveedor -->
+    <div id="panel-backdrop" class="det-backdrop"></div>
+    <aside id="panel-detalle" class="det-panel">
+        <div class="det-header">
+            <span id="det-cod" class="det-title-cod"></span>
+            <button id="btn-cerrar-panel" class="det-close" title="Cerrar">✕</button>
+        </div>
+        <div class="det-raz-wrap">
+            <div id="det-raz" class="det-raz"></div>
+            <div id="det-nom" class="det-nom-corto"></div>
+        </div>
+        <div class="det-grid">
+            <div class="det-item det-full"><span class="det-label">NIF / CIF</span><span id="det-nif" class="det-value"></span></div>
+            <div class="det-item det-full"><span class="det-label">Dirección</span><span id="det-dir" class="det-value"></span></div>
+            <div class="det-item det-full"><span class="det-label">Localidad</span><span id="det-ciu" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Teléfono</span><span id="det-tel" class="det-value"></span></div>
+            <div class="det-item"><span class="det-label">Persona de contacto</span><span id="det-con" class="det-value"></span></div>
+            <div class="det-item det-full"><span class="det-label">Email</span><span id="det-ema" class="det-value"></span></div>
+        </div>
+    </aside>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/ui/sidebar.js"></script>
+    <script src="../../js/ui/layout.js"></script>
+    <script src="../../js/ferreteria/proveedores.js"></script>
+</body>
+
+</html>

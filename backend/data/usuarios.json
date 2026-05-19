@@ -1,0 +1,7 @@
+[
+  { "USUCOD": "OPE01", "USUNOM": "PEDRO ALONSO RUIZ",       "USUTIP": 1, "USUNIV": 3 },
+  { "USUCOD": "OPE02", "USUNOM": "MARÍA FERNÁNDEZ GARCÍA",  "USUTIP": 1, "USUNIV": 2 },
+  { "USUCOD": "OPE03", "USUNOM": "ANTONIO MARTÍNEZ PÉREZ",  "USUTIP": 1, "USUNIV": 2 },
+  { "USUCOD": "ADM01", "USUNOM": "JEFE DE ALMACÉN",         "USUTIP": 2, "USUNIV": 5 },
+  { "USUCOD": "SGA",   "USUNOM": "SISTEMA SGA LIN",         "USUTIP": 9, "USUNIV": 9 }
+]

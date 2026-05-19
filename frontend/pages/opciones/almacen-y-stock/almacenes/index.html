@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA LIN — Almacenes</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+    <link rel="stylesheet" href="../../../../css/layout.css">
+    <link rel="stylesheet" href="../../../../css/sidebar.css">
+    <link rel="stylesheet" href="../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../css/buttons.css">
+    <link rel="stylesheet" href="../../../../css/responsive.css">
+    <link rel="stylesheet" href="../../../../css/opciones/almacen-y-stock/almacenes/index.css">
+</head>
+<body class="sga-layout">
+
+    <div class="sga-main">
+        <header class="sga-header">
+            <div class="sga-header-left">
+                <button class="sga-hamburger" aria-label="Abrir menú">☰</button>
+                <nav class="sga-breadcrumb">
+                    <a href="../../../../index.html">Inicio</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <span class="sga-breadcrumb-current">Almacenes — Plano 2D</span>
+                </nav>
+            </div>
+            <div class="sga-header-right"></div>
+        </header>
+
+        <div class="sga-content" style="padding:0">
+            <div class="alm-toolbar">
+                <div class="alm-title">🏗️ Almacenes — Vista de planta</div>
+                <div class="alm-legend">
+                    <span class="leg-ok"></span> Con stock
+                    <span class="leg-warn" style="margin-left:8px"></span> Bajo mínimo
+                    <span class="leg-empty" style="margin-left:8px"></span> Vacío
+                </div>
+                <button class="sga-btn sga-btn-secondary" onclick="window.open('../../../../3d/mapa-3d.html','_blank')">
+                    🔳 Ver en 3D
+                </button>
+            </div>
+
+            <div class="alm-body">
+                <div class="alm-canvas" id="alm-canvas">
+                    <div style="color:#9ca3af;text-align:center;padding:60px">Cargando plano…</div>
+                </div>
+                <div class="alm-panel" id="alm-panel">
+                    <button class="alm-close" id="alm-close" title="Cerrar">✕</button>
+                    <div class="alm-panel-inner" id="alm-panel-inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../js/api.js"></script>
+    <script src="../../../../js/ui/sidebar.js"></script>
+    <script src="../../../../js/opciones/almacen-y-stock/almacenes.js"></script>
+</body>
+</html>

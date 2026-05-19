@@ -1,0 +1,36 @@
+/* ── FILTROS ─────────────────────────────────────────────────────────────── */
+.filter-panel {
+    background: var(--sga-surface);
+    border-radius: var(--sga-radius);
+    box-shadow: var(--sga-shadow);
+    padding: 14px 18px;
+}
+.filter-row  { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.filter-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.filter-group label { font-weight: 600; font-size: .85rem; color: var(--sga-text); white-space: nowrap; }
+
+.input-sm {
+    width: 160px; padding: 6px 10px;
+    border: 1px solid var(--sga-border); border-radius: 4px;
+    font-size: .85rem;
+}
+.input-sm:focus { outline: none; border-color: var(--sga-primary); }
+
+/* ── TABLA ───────────────────────────────────────────────────────────────── */
+.table-wrapper {
+    background: var(--sga-surface);
+    border-radius: var(--sga-radius);
+    box-shadow: var(--sga-shadow);
+    overflow-x: auto;
+}
+table  { width: 100%; border-collapse: collapse; }
+th {
+    background: #f0f5ff; padding: 11px 14px;
+    text-align: left; color: var(--sga-primary);
+    border-bottom: 2px solid #dbeafe;
+    font-size: .82rem; text-transform: uppercase; white-space: nowrap;
+}
+td { padding: 10px 14px; border-bottom: 1px solid #f1f5f9; font-size: .88rem; }
+tr:hover td { background: #f8faff; }
+.col-check { width: 40px; text-align: center; }
+.placeholder-row td { text-align: center; color: #9ca3af; font-style: italic; padding: 30px; }

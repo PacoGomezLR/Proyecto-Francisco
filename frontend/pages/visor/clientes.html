@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA LIN — Clientes</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/buttons.css">
+    <link rel="stylesheet" href="../../css/forms.css">
+    <link rel="stylesheet" href="../../css/tables.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/visor/clientes.css">
+</head>
+
+<body class="sga-layout">
+
+    <div class="sga-main">
+
+        <header class="sga-header">
+            <div class="sga-header-left">
+                <button class="sga-hamburger" aria-label="Abrir menú">☰</button>
+                <nav class="sga-breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <span class="sga-breadcrumb-current">Clientes</span>
+                </nav>
+            </div>
+            <div class="sga-header-right"></div>
+        </header>
+
+        <div class="sga-content">
+            <div class="sga-inner">
+
+                <div class="sga-page-header">
+                    <div>
+                        <h1 class="sga-page-title">Clientes</h1>
+                        <p class="sga-page-description">Consulta del maestro de clientes · SGA LIN</p>
+                    </div>
+                </div>
+
+                <div class="filter-panel">
+                    <input type="text" id="buscador-clientes" class="search-bar" placeholder="Buscar por nombre, CIF o zona…">
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cód. Cliente</th>
+                                <th>Nombre / Empresa</th>
+                                <th>CIF</th>
+                                <th>Teléfono</th>
+                                <th>Zona</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-visor-clientes">
+                            <tr><td colspan="5" style="text-align:center;padding:20px;color:var(--sga-text-muted)">Cargando…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/ui/sidebar.js"></script>
+    <script src="../../js/ui/layout.js"></script>
+    <script src="../../js/visor/clientes.js"></script>
+</body>
+
+</html>

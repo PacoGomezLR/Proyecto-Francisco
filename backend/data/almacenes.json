@@ -1,0 +1,5 @@
+[
+  { "ALMCOD": "ALM1", "ALMNOM": "Almacén Principal" },
+  { "ALMCOD": "ALM2", "ALMNOM": "Almacén Exterior" },
+  { "ALMCOD": "PICK", "ALMNOM": "Zona Picking" }
+]

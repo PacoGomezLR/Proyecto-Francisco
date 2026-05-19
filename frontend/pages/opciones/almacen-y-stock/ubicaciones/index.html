@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA LIN - Ubicaciones</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+    <link rel="stylesheet" href="../../../../css/layout.css">
+    <link rel="stylesheet" href="../../../../css/sidebar.css">
+    <link rel="stylesheet" href="../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../css/buttons.css">
+    <link rel="stylesheet" href="../../../../css/forms.css">
+    <link rel="stylesheet" href="../../../../css/tables.css">
+    <link rel="stylesheet" href="../../../../css/responsive.css">
+    <link rel="stylesheet" href="../../../../css/opciones/almacen-y-stock/ubicaciones/index.css">
+</head>
+
+<body class="sga-layout">
+
+    <div class="sga-main">
+
+        <header class="sga-header">
+            <div class="sga-header-left">
+                <button class="sga-hamburger" aria-label="Abrir menú">☰</button>
+                <nav class="sga-breadcrumb">
+                    <a href="../../../../index.html">Inicio</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <span class="sga-breadcrumb-current">Ubicaciones</span>
+                </nav>
+            </div>
+            <div class="sga-header-right"></div>
+        </header>
+
+        <div class="sga-content">
+            <div class="sga-inner">
+                <div class="sga-page-header">
+                    <div>
+                        <h1 class="sga-page-title">Ubicaciones</h1>
+                        <p class="sga-page-description">Almacén · SGA LIN</p>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap">
+                        <button class="sga-btn sga-btn-secondary sga-btn-sm" id="btn-exportar">Exportar CSV</button>
+                    </div>
+                </div>
+
+                <div class="filter-panel">
+                    <div class="filter-row">
+                        <label>Ubicación:</label>
+                        <input type="text" class="input-sm" id="f-ubicacion" placeholder="Código o nombre…">
+                        <button class="sga-btn sga-btn-primary sga-btn-sm" id="btn-actualizar">Buscar</button>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table id="tabla-ubicaciones">
+                        <thead>
+                            <tr>
+                                <th class="col-contador">CONTADOR</th>
+                                <th class="col-check">Sel</th>
+                                <th>Ubicación</th>
+                                <th>Etiqueta</th>
+                                <th>Descripción</th>
+                                <th>Ancho</th>
+                                <th>Alto</th>
+                                <th>Palets</th>
+                                <th>Picking</th>
+                                <th>Múltiple</th>
+                                <th>Ubicación</th>
+                                <th>Exclusiva</th>
+                                <th>No av. inv.</th>
+                                <th>Artículo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-ubicaciones">
+                            <tr class="edit-row" data-id="new-1">
+                                <td class="col-contador">1</td>
+                                <td class="col-check"><input type="checkbox" class="cell-check"></td>
+                                <td><input type="text" class="cell-input" placeholder="Ubicación"></td>
+                                <td><input type="text" class="cell-input" placeholder="Etiqueta"></td>
+                                <td><input type="text" class="cell-input cell-wide" placeholder="Descripción"></td>
+                                <td><input type="number" class="cell-input cell-num" value="0"></td>
+                                <td><input type="number" class="cell-input cell-num" value="0"></td>
+                                <td><input type="number" class="cell-input cell-num" value="0"></td>
+                                <td class="col-check"><input type="checkbox" class="cell-check"></td>
+                                <td class="col-check"><input type="checkbox" class="cell-check"></td>
+                                <td><input type="text" class="cell-input" placeholder=""></td>
+                                <td class="col-check"><input type="checkbox" class="cell-check"></td>
+                                <td class="col-check"><input type="checkbox" class="cell-check"></td>
+                                <td><input type="text" class="cell-input" placeholder=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../../../js/api.js"></script>
+    <script src="../../../../js/ui/sidebar.js"></script>
+    <script src="../../../../js/ui/layout.js"></script>
+    <script src="../../../../js/opciones/almacen-y-stock/ubicaciones.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA LIN - Generar Ubicaciones</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+    <link rel="stylesheet" href="../../../../css/layout.css">
+    <link rel="stylesheet" href="../../../../css/sidebar.css">
+    <link rel="stylesheet" href="../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../css/buttons.css">
+    <link rel="stylesheet" href="../../../../css/forms.css">
+    <link rel="stylesheet" href="../../../../css/tables.css">
+    <link rel="stylesheet" href="../../../../css/responsive.css">
+    <link rel="stylesheet" href="../../../../css/opciones/almacen-y-stock/generar-ubicaciones/index.css">
+</head>
+
+<body class="sga-layout">
+
+    <div class="sga-main">
+
+        <header class="sga-header">
+            <div class="sga-header-left">
+                <button class="sga-hamburger" aria-label="Abrir menú">☰</button>
+                <nav class="sga-breadcrumb">
+                    <a href="../../../../index.html">Inicio</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <span class="sga-breadcrumb-current">Generar Ubicaciones</span>
+                </nav>
+            </div>
+            <div class="sga-header-right"></div>
+        </header>
+
+        <div class="sga-content">
+            <div class="sga-inner gu-inner">
+
+                <div class="sga-page-header">
+                    <div>
+                        <h1 class="sga-page-title">Generar Ubicaciones</h1>
+                        <p class="sga-page-description">Almacén · SGA LIN</p>
+                    </div>
+                </div>
+
+                <div class="gu-body">
+
+                    <!-- ── PANEL IZQUIERDO: tabla de ubicaciones ── -->
+                    <div class="gu-left">
+
+                        <div class="gu-checks">
+                            <label class="gu-check-label">
+                                <input type="checkbox"> Mostrar ubicaciones no existentes con movimientos
+                            </label>
+                            <label class="gu-check-label">
+                                <input type="checkbox"> Solo con existencias
+                            </label>
+                        </div>
+
+                        <div class="gu-table-wrap">
+                            <table class="gu-table">
+                                <thead>
+                                    <tr>
+                                        <th class="col-num">#</th>
+                                        <th class="col-sel">Sel</th>
+                                        <th>Ubicación</th>
+                                        <th>Etiqueta</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-ubicaciones">
+                                    <tr>
+                                        <td colspan="4" class="gu-empty">Sin ubicaciones.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <!-- ── PANEL DERECHO: parámetros + acciones ── -->
+                    <div class="gu-right">
+
+                        <div class="gu-card">
+                            <div class="gu-card-title">Parámetros de generación</div>
+
+                            <div class="gu-params">
+                                <label>Desde pasillo:</label>
+                                <input type="text" id="desde-pasillo">
+
+                                <label>Desde lateral:</label>
+                                <input type="text" id="desde-lateral" value="11">
+
+                                <label>Desde X:</label>
+                                <input type="text" id="desde-x">
+
+                                <label>Desde Y:</label>
+                                <input type="text" id="desde-y">
+
+                                <div class="gu-divider"></div>
+
+                                <label>Hasta pasillo:</label>
+                                <input type="text" id="hasta-pasillo">
+
+                                <label>Hasta lateral:</label>
+                                <input type="text" id="hasta-lateral" value="21">
+
+                                <label>Hasta X:</label>
+                                <input type="text" id="hasta-x">
+
+                                <label>Hasta Y:</label>
+                                <input type="text" id="hasta-y">
+
+                                <div class="gu-divider"></div>
+
+                                <label>Ancho:</label>
+                                <input type="number" id="ancho" value="0">
+
+                                <label>Alto:</label>
+                                <input type="number" id="alto" value="0">
+
+                                <label>Palets:</label>
+                                <input type="number" id="palets" value="0">
+
+                                <label></label>
+                                <label class="gu-check-row">
+                                    <input type="checkbox" id="multiple"> Ubicación múltiple
+                                </label>
+                            </div>
+
+                            <div class="gu-footer">
+                                <select class="gu-select" id="tipo-zona">
+                                    <option>Picking</option>
+                                    <option>Reserva</option>
+                                    <option>Suelo</option>
+                                </select>
+                                <button class="gu-btn-ok" type="button" id="btn-generar">OK</button>
+                            </div>
+                        </div>
+
+                        <div class="gu-actions">
+                            <button class="gu-btn-action gu-btn-action--danger" type="button">
+                                Eliminar ubicaciones y movimientos
+                            </button>
+                            <button class="gu-btn-action" type="button">
+                                Asignar picking CLIN 1995
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../../../js/api.js"></script>
+    <script src="../../../../js/ui/sidebar.js"></script>
+    <script src="../../../../js/ui/layout.js"></script>
+    <script src="../../../../js/opciones/almacen-y-stock/generar-ubicaciones.js"></script>
+</body>
+
+</html>

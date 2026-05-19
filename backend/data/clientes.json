@@ -1,0 +1,7 @@
+[
+  { "CLICOD": "CLI001", "CLICENCOD": "", "CLIRAZ": "FERRETERÍAS MARTÍNEZ S.L.",          "CLINOM": "FERR. MARTÍNEZ", "CLIDIR": "Calle Mayor 45",          "CLIPOSCIU": "Zaragoza",      "CLINIF": "B50001234", "CLITEL": "976000001", "CLIEMA": "pedidos@ferrmartinez.es" },
+  { "CLICOD": "CLI002", "CLICENCOD": "", "CLIRAZ": "CONSTRUCCIONES LÓPEZ S.A.",           "CLINOM": "CONST. LÓPEZ",   "CLIDIR": "Av. Construcción 12",     "CLIPOSCIU": "Pamplona",      "CLINIF": "A31001234", "CLITEL": "948000001", "CLIEMA": "compras@constlopez.com" },
+  { "CLICOD": "CLI003", "CLICENCOD": "", "CLIRAZ": "OBRAS GARCIA S.L.",                   "CLINOM": "OBRAS GARCIA",   "CLIDIR": "Polígono Oeste, Nave 3",  "CLIPOSCIU": "Logroño",       "CLINIF": "B26001234", "CLITEL": "941000001", "CLIEMA": "" },
+  { "CLICOD": "CLI004", "CLICENCOD": "", "CLIRAZ": "BRICOLAJE CASA Y HOGAR S.L.",         "CLINOM": "BRICO CASA",     "CLIDIR": "Gran Vía 78",             "CLIPOSCIU": "Vitoria",       "CLINIF": "B01001234", "CLITEL": "945000001", "CLIEMA": "ventas@bricocasa.es" },
+  { "CLICOD": "CLI005", "CLICENCOD": "", "CLIRAZ": "MANTENIMIENTO INDUSTRIAL NORTE S.A.", "CLINOM": "MANINDE S.A.",   "CLIDIR": "Zona Industrial Este 22", "CLIPOSCIU": "San Sebastián", "CLINIF": "A20001234", "CLITEL": "943000001", "CLIEMA": "adm@maninde.es" }
+]

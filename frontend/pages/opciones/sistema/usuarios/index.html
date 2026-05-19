@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA LIN - Usuarios</title>
+    <link rel="stylesheet" href="../../../../css/base.css">
+    <link rel="stylesheet" href="../../../../css/layout.css">
+    <link rel="stylesheet" href="../../../../css/sidebar.css">
+    <link rel="stylesheet" href="../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../css/buttons.css">
+    <link rel="stylesheet" href="../../../../css/forms.css">
+    <link rel="stylesheet" href="../../../../css/tables.css">
+    <link rel="stylesheet" href="../../../../css/responsive.css">
+    <link rel="stylesheet" href="../../../../css/opciones/sistema/usuarios/index.css">
+</head>
+
+<body class="sga-layout">
+
+    <div class="sga-main">
+
+        <header class="sga-header">
+            <div class="sga-header-left">
+                <button class="sga-hamburger" aria-label="Abrir menú">☰</button>
+                <nav class="sga-breadcrumb">
+                    <a href="../../../../index.html">Inicio</a>
+                    <span class="sga-breadcrumb-sep">›</span>
+                    <span class="sga-breadcrumb-current">Usuarios del Sistema</span>
+                </nav>
+            </div>
+            <div class="sga-header-right"></div>
+        </header>
+
+        <div class="sga-content">
+            <div class="sga-inner">
+                <div class="sga-page-header">
+                    <div>
+                        <h1 class="sga-page-title">Usuarios del Sistema</h1>
+                        <p class="sga-page-description">Sistema · SGA LIN</p>
+                    </div>
+                    <div style="display:flex;gap:8px">
+                        <button class="sga-btn sga-btn-secondary sga-btn-sm" id="btn-nuevo">+ Nuevo</button>
+                        <button class="sga-btn sga-btn-primary sga-btn-sm" id="btn-guardar">Guardar</button>
+                    </div>
+                </div>
+
+                <input type="text" id="buscador" class="search-bar" placeholder="Buscar usuario...">
+
+                <div class="main-layout">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Tipo</th>
+                                    <th>Nivel</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-usuarios">
+                                <tr class="placeholder-row">
+                                    <td colspan="4">Cargando usuarios...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="form-panel">
+                        <h3 id="panel-titulo">Datos del usuario</h3>
+                        <div class="form-row">
+                            <label>Código</label>
+                            <input type="text" id="usu-codigo" placeholder="USU001" maxlength="10">
+                        </div>
+                        <div class="form-row">
+                            <label>Nombre</label>
+                            <input type="text" id="usu-nombre" placeholder="Nombre completo">
+                        </div>
+                        <div class="form-row">
+                            <label>Tipo</label>
+                            <select id="usu-tipo">
+                                <option value="1">Operario</option>
+                                <option value="2">Supervisor</option>
+                                <option value="3">Administrador</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label>Nivel</label>
+                            <select id="usu-nivel">
+                                <option value="1">Básico</option>
+                                <option value="2">Medio</option>
+                                <option value="3">Avanzado</option>
+                                <option value="4">Total</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label>Contraseña <span style="color:#9ca3af;font-weight:400">(dejar vacío para no cambiar)</span></label>
+                            <input type="password" id="usu-password" placeholder="••••••••" autocomplete="new-password">
+                        </div>
+                        <p id="form-error" class="form-error" hidden></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../../../js/api.js"></script>
+    <script src="../../../../js/ui/sidebar.js"></script>
+    <script src="../../../../js/ui/layout.js"></script>
+    <script src="../../../../js/opciones/sistema/usuarios.js"></script>
+</body>
+
+</html>
