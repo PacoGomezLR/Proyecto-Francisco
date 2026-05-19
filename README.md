@@ -17,8 +17,8 @@ El proyecto funciona **sin base de datos real**: el backend carga los datos desd
 | Capa | Tecnología |
 |---|---|
 | Frontend | HTML5 + CSS3 + JavaScript vanilla (sin frameworks) |
-| Backend | Node.js + Express 5 |
-| Datos | Archivos JSON en `backend/data/`, cargados en memoria al arrancar |
+| Backend | json-server sobre `backend/db.json` |
+| Datos | `backend/db.json` — archivo JSON que simula la base de datos |
 | Gráficas | Chart.js (CDN) |
 | Visor 3D | Three.js (módulo ES) + modelo GLTF + texturas |
 
@@ -39,14 +39,7 @@ node --version
 
 ## Instalación
 
-Solo hay que instalar las dependencias del backend. El frontend no tiene dependencias (usa CDNs).
-
-```bash
-cd backend
-npm install
-```
-
-Esto instala: `express`, `cors`, `helmet`, `express-rate-limit`.
+No hay dependencias que instalar. json-server se ejecuta directamente con `npx`.
 
 ---
 
@@ -58,17 +51,10 @@ El proyecto tiene dos partes que hay que ejecutar por separado.
 
 ```bash
 cd backend
-npm start
+npx json-server --watch db.json --port 3000
 ```
 
-La API arranca en `http://localhost:3000`. Al iniciar verás:
-
-```
-🗂️  [SIM] SGA LIN — Modo simulación (datos desde backend/data/)
-SGA API en http://localhost:3000
-```
-
-Puedes verificar que funciona abriendo `http://localhost:3000/health` en el navegador.
+La API arranca en `http://localhost:3000`. Puedes verificar que funciona abriendo `http://localhost:3000/articulos` en el navegador.
 
 ### 2. Frontend
 
@@ -247,7 +233,7 @@ El backend expone los siguientes endpoints en `http://localhost:3000`:
 
 ## Datos de demostración
 
-Los archivos en `backend/data/` contienen datos representativos de una ferretería:
+El archivo `backend/db.json` contiene datos representativos de una ferretería:
 
 - **22 artículos** (ART001–ART022): tornillos, tuercas, arandelas, herramientas, sellantes, etc.
 - **3 almacenes**: ALM1 (principal), ALM2 (exterior), PICK (zona picking)
