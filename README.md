@@ -262,7 +262,6 @@ Los movimientos históricos (entradas, salidas, traspasos) se generan al arranca
 
 ## Notas técnicas
 
-- `backend/db.js` está en `.gitignore` porque es la capa de simulación específica de cada entorno. Si clonas el repositorio necesitarás este archivo para que el servidor funcione.
 - El visor 3D requiere un navegador con soporte WebGL (cualquier navegador moderno lo tiene).
 - La seguridad del backend incluye cabeceras HTTP seguras (`helmet`) y limitación de peticiones por IP (`express-rate-limit`: 200 req / 15 min).
 - El backend usa **Express 5** (última versión estable).
