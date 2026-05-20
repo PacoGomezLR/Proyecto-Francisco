@@ -561,7 +561,6 @@
             linesDiv.appendChild(lineEl);
         });
 
-        $('sm-workspace').hidden = true;
         $('sm-results').hidden = false;
     }
 
@@ -584,8 +583,7 @@
         ocultarStatus();
         renderCarrito();
 
-        $('sm-workspace').hidden = false;
-        $('sm-results').hidden   = true;
+        $('sm-results').hidden = true;
         $('btn-confirmar').textContent = 'Confirmar salida ▶';
 
         $('sm-art-cod').focus();

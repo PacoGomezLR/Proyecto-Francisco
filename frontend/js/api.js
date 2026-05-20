@@ -102,9 +102,12 @@ const SGA = {
         }),
     },
     salidas: {
-        save: data => Promise.resolve({
-            serie: 'S', albaran: String(Date.now()).slice(-6),
-            stocklote_antes: data.cant, stocklote_nuevo: 0
+        save: data => _post('/salidas', {
+            ...data,
+            fecha: new Date().toISOString().slice(0, 10),
+            hora:  new Date().toTimeString().slice(0, 5),
+            serie: 'S',
+            albaran: String(Date.now()).slice(-6),
         }),
     },
     traspasos: {

@@ -2,8 +2,8 @@ let todosUsuarios = [];
 let usuarioActivo = null;
 let modoNuevo = false;
 
-const TIPOS  = { 1: 'Operario', 2: 'Supervisor', 3: 'Administrador' };
-const NIVELES = { 1: 'Básico', 2: 'Medio', 3: 'Avanzado', 4: 'Total' };
+const TIPOS  = { 1: 'Operario', 2: 'Supervisor', 3: 'Administrador', 9: 'Sistema' };
+const NIVELES = { 1: 'Básico', 2: 'Medio', 3: 'Avanzado', 4: 'Total', 5: 'Total', 9: 'Sistema' };
 
 function campo(r, ...keys) {
     for (const k of keys) if (r[k] != null && r[k] !== '') return r[k];

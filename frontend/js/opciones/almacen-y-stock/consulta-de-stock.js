@@ -54,13 +54,22 @@
 
     function getClientFilters() {
         return {
-            libre: $('f-libre').value,
+            articulo:  $('f-articulo').value.trim().toLowerCase(),
+            ubicacion: $('f-ubicacion').value.trim().toLowerCase(),
+            lote:      $('f-lote').value.trim().toLowerCase(),
+            libre:     $('f-libre').value,
+            existencias: $('f-existencias').value,
         };
     }
 
     function applyClientFilters() {
         var cf = getClientFilters();
         _filtered = _rows.filter(function (r) {
+            if (cf.articulo  && !(r.articulo  || '').toLowerCase().includes(cf.articulo))  return false;
+            if (cf.ubicacion && !(r.ubicacion  || '').toLowerCase().includes(cf.ubicacion)) return false;
+            if (cf.lote      && !(r.lote       || '').toLowerCase().includes(cf.lote))      return false;
+            if (cf.existencias === '1'  && !(parseFloat(r.stock) > 0))  return false;
+            if (cf.existencias === '-1' && !(parseFloat(r.stock) <= 0)) return false;
             if (cf.libre === '1' && !r.libre) return false;
             if (cf.libre === '0' && r.libre)  return false;
             return true;
